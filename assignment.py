@@ -1,4 +1,6 @@
 import random
+
+
 def main():
     # Randomly choose an operation from this tuple for each question
     math_operations = ("add", "subtract", "multiply")
@@ -8,7 +10,11 @@ def main():
     correct = 0
 
     print("Welcome to the Random Math Quiz!")
-    print(f"You will be asked {num_questions} questions")
+
+    if num_questions == 1:
+        print(f"You will be asked {num_questions} question")
+    else:
+        print(f"You will be asked {num_questions} questions")
 
     for i in range(num_questions):
         operation = random.choice(math_operations)
@@ -37,11 +43,9 @@ def main():
             print("Correct!")
             correct += 1
         else:
-            print(f"Incorrect. The answer was {answer}")
+            print(f"Incorrect. The correct answer was {answer}")
 
     print(f"\nYou got {correct}/{num_questions} correct.")
-
-    # Your code begins here
 
 
 if __name__ == "__main__":
